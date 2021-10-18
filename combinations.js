@@ -44,7 +44,7 @@ function getAllCombinationsOfASet(text) {
                     
                     if(combos[i][j]!==combos[z][k]){  
                       
-                      
+                      //match i and z
                       inspector[i][z]=z;
 
                       }else{
