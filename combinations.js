@@ -16,61 +16,63 @@ function getAllCombinationsOfASet(text) {
     const splitter= results
                     .map(x=>(x.split("")));
 
-    const combos = splitter  
+    const combos = splitter
                     .map(x=>x.map(z=>parseInt(z)));
 
 
    // const d= ar.concat(combos[0],combos[2],combos[6]);
 
-  
+
 
     console.log(combos);
     //console.log(combos.length);
     //console.log(combos[6][6]);
 
  let inspector=[];
- 
+
 
     for(let i =0; i<combos.length-1;i++){
-          
-             
+
+
             for (let z=i+1;z<combos.length;z++){
                      //console.log(i+""+z);
-              if (!inspector[i]) inspector[i] = [] 
+              if (!inspector[i]) inspector[i] = []
 
                 for(let j=0;j<combos[i].length;j++){
-                          
+
                   for(let k=0;k<combos[z].length;k++){
-                    
-                    if(combos[i][j]!==combos[z][k]){  
-                      
+
+                    if(combos[i][j]!==combos[z][k]){
+
+                      //match i and z
+                      //match i and z
                       //match i and z
                       inspector[i][z]=z;
 
                       }else{
 
                       inspector[i][z]="";
-                      
+
                             }
                                                       }
                                                     }
 
-                      //} 
+                      //}
 
                                             }
-           
+
         }
 
       console.log(inspector);
-        
-        return combos;   
-               
+
+        return combos;
+
     }
-  
-    
-  
+
+
+
     getAllCombinationsOfASet("123");
-    
+
 
 //   const dummyF=()=>
 //   {
