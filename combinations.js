@@ -51,7 +51,7 @@ let counter=-1;
                   //combos[i].length<combos[z].length then do as follows
                   //else reverse order of for (first k then j)
   
-              loop:  for(let j=0;j<combos[i].length;j++){
+        loop:  for(let j=0;j<combos[i].length;j++){
 
                   for(let k=0;k<combos[z].length;k++){   
 
@@ -68,19 +68,19 @@ let counter=-1;
                          candidateI="";
                          candidateZ="";
                          break loop;
-
-                                                        }
-                                                            }
-                                                              }
-                                                                }
-                                                                  }
+                                    }
+    }
+      }
+        }
+         }
                          return combos;
 
-                                                                      }
+ }
 
 
 
-    getAllCombinationsOfASet("1234");
+    getAllCombinationsOfASet("123");
+
 
 
 //   const dummyF=()=>
