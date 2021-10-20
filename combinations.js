@@ -19,7 +19,7 @@ function getAllCombinationsOfASet(text) {
                     .map(x=>x.map(z=>parseInt(z)));
 
 
-//let combos=[ [ 2, 1 ],[ 3, 2 ]]
+
 
 let candidateArr=[[]];
 let candidateI="";
@@ -29,8 +29,6 @@ let counter=-1;
 
     console.log(combos);
 
-    //console.log(combos.length);
-    //console.log(combos[6][6]);
 
        for(let i =0; i<combos.length-1;i++){
           
@@ -47,10 +45,7 @@ let counter=-1;
                         candidateArr[counter][candidateZ]=combos[candidateZ];
                   }
 
-                  //if statement to assess order. For example check if
-                  //combos[i].length<combos[z].length then do as follows
-                  //else reverse order of for (first k then j)
-  
+               
         loop:  for(let j=0;j<combos[i].length;j++){
 
                   for(let k=0;k<combos[z].length;k++){   
