@@ -10,8 +10,7 @@ function getAllCombinationsOfASet(text) {
       results.push(text[i]);
     }
 
-    //console.log(results[14].split(""));
-    //console.log(parseInt(results[15].split("")[0]));
+
 
     const splitter= results
                     .map(x=>(x.split("")));
@@ -20,57 +19,68 @@ function getAllCombinationsOfASet(text) {
                     .map(x=>x.map(z=>parseInt(z)));
 
 
-   // const d= ar.concat(combos[0],combos[2],combos[6]);
+//let combos=[ [ 2, 1 ],[ 3, 2 ]]
 
+let candidateArr=[[]];
+let candidateI="";
+let candidateZ="";
+let counter=-1;
 
 
     console.log(combos);
+
     //console.log(combos.length);
     //console.log(combos[6][6]);
 
- let inspector=[];
+       for(let i =0; i<combos.length-1;i++){
+          
 
-
-    for(let i =0; i<combos.length-1;i++){
-
-
-            for (let z=i+1;z<combos.length;z++){
+         for (let z=i+1;z<combos.length;z++){
                      //console.log(i+""+z);
-              if (!inspector[i]) inspector[i] = []
+                  if(candidateI!=="" && candidateZ!==""){       
 
-                for(let j=0;j<combos[i].length;j++){
+                      counter++
+                      if (!candidateArr[counter]) candidateArr[counter] = [] 
+                      console.log(candidateI + "   " + candidateZ);
 
-                  for(let k=0;k<combos[z].length;k++){
+                        candidateArr[counter][candidateI]=combos[candidateI];
+                        candidateArr[counter][candidateZ]=combos[candidateZ];
+                  }
 
-                    if(combos[i][j]!==combos[z][k]){
+                  //if statement to assess order. For example check if
+                  //combos[i].length<combos[z].length then do as follows
+                  //else reverse order of for (first k then j)
+  
+              loop:  for(let j=0;j<combos[i].length;j++){
 
-            
-                      //match i and z
-                      inspector[i][z]=z;
+                  for(let k=0;k<combos[z].length;k++){   
 
-                      }else{
+                        candidateI="";
+                        candidateZ="";
 
-                      inspector[i][z]="";
+                     if(combos[i][j]!==combos[z][k]){
 
-                            }
-                                                      }
-                                                    }
+                        candidateI=i;
+                        candidateZ=z;
 
-                      //}
+                       }else{
 
-                                            }
+                         candidateI="";
+                         candidateZ="";
+                         break loop;
 
-        }
+                                                        }
+                                                            }
+                                                              }
+                                                                }
+                                                                  }
+                         return combos;
 
-      console.log(inspector);
-
-        return combos;
-
-    }
+                                                                      }
 
 
 
-    getAllCombinationsOfASet("123");
+    getAllCombinationsOfASet("1234");
 
 
 //   const dummyF=()=>
