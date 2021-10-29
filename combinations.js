@@ -22,11 +22,11 @@ function getAllCombinationsOfASet(text) {
     for (let z=i+1; z<combos.length; z++) {
       //console.log(i+""+z);
       if(candidateI!=="" && candidateZ!=="") {
-          counter++
-          if (!candidateArr[counter]) candidateArr[counter] = [];
+          //counter++
+          //if (!candidateArr[counter]) candidateArr[counter] = [];
           console.log(candidateI + "   " + candidateZ);
-          candidateArr[counter][candidateI]=combos[candidateI];
-          candidateArr[counter][candidateZ]=combos[candidateZ];
+         // candidateArr[counter][candidateI]=combos[candidateI];
+          //candidateArr[counter][candidateZ]=combos[candidateZ];
       }
     loop:
       for(let j=0; j<combos[i].length; j++) {
@@ -49,4 +49,4 @@ function getAllCombinationsOfASet(text) {
   return combos;
 }
 
-getAllCombinationsOfASet("123");
+getAllCombinationsOfASet("1234");

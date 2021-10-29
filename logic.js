@@ -2,19 +2,21 @@
 const paySettle = ()=>{
 
 let maping= {
-                humans:["A","B","C","D","E","F","G","H"], 
-                moneySpent:[10,0,20,0,40]
+                humans:["A","B","C","D","E"], 
+                moneySpent:[10,20,30,40,0]
             };
+
 
 const target = maping.moneySpent.reduce(
     (accumulator, a) => accumulator+a  
                   ,0)/maping.moneySpent.length; //reduce reduces an array to a single digit
                                                 //target is the amount to be reached by all participants
 
-//let debt=maping.moneySpent.map(x=>target-x);  //loops through all elements of array and calculates
-  let debt=[-14,-10,-8,3,5,7,8,9];                                              // differences from target
+  let debt=maping.moneySpent.map(x=>target-x);  //loops through all elements of array and calculates
+                                                 // differences from target
                                                 //in order to identify who owns (positive)                                         
                                                 // and who is owned (negative)   
+console.log(debt)
 
 let stateC=0;
 let stateD=0;
